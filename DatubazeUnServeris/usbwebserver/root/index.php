@@ -1,22 +1,135 @@
-
-<html>
+<!DOCTYPE html>
+<html lang='en'>
 
 <head>
+  <meta charset='UTF-8'>
+  <title>MeklēBūvi.lv</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-<h1>Māju meklētājs</h1>
 
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div class="nav-link-wrapper active-nav-link">
+          <a href="index.html">Sākums</a>
+        </div>
 
+        <div class="nav-link-wrapper">
+          <a href="about.php">Kontakti</a>
+        </div>
+		
+		<div class="nav-link-wrapper">
+          <a href="db_saraksts.php">Pilnais datu bāžu saraksts</a>
+        </div>
+		
+      </div>
 
-<form action = "search.php" method= "post">
-Ievadiet mājas adresi: <br>
-<input type="text" name="keyword"><br>
+      <div class="right-side">
+        <div class="brand">
+          RTU IZV
+        </div>
+      </div>
+    </div>
+	
+	<div class = "container">
+		<div class="content-wrapper">
+			<div class="portfolio-item-wrapper">
+				<div class="portfolio-img-background1" style="background-image:url(images/portfolio1.jpg)"></div>
+				<div class="img-text-wrapper2">
+				<div class="logo-wrapper1">
+				<img src="images/logos/quip.png" alt="">
+				</div>
+				</div>
+				<div class="img-text-wrapper1">
+				<div class="Title">Latvijas būvmeklētājs</div>
+            	
+				</div>
+			</div>
+		</div>
+    </div>
+	
+	
+    <div class="content-wrapper">
+      <div class="portfolio-items-wrapper">
+	
+        <div class="portfolio-item-wrapper">
+          <div class="portfolio-img-background" style="background-image:url(images/portfolio12.jpg)"></div>
 
-<input type="submit" value="Meklēt">
-</form>
+          <div class="img-text-wrapper">
+            <div class="logo-wrapper">
+              <img src="images/logos/maja.png" alt="">
+            </div>
+			<div class="subtitle">Meklēt pēc adreses</div>
+			
+			
+			<form action = "search.php" method= "post"> 
+			<input type="text" name="keyword"><br>
+			<input type="submit" value="Meklēt">
+			</form>
+            
+			
+          </div>
+        </div>
 
+        <div class="portfolio-item-wrapper">
+          <div class="portfolio-img-background" style="background-image:url(images/portfolio2.jpg)"></div>
+          <div class="img-text-wrapper">
+            <div class="logo-wrapper">
+              <img src="images/logos/arhitekts.png" alt="">
+            </div>
 
+            <div class="subtitle">Meklēt pēc arhitekta</div>
+			<form action = "search_arhitekts.php" method= "post"> 
+			<input type="text" name="keyword"><br>
+			<input type="submit" value="Meklēt">
+			</form>
+            
+          </div>
+        </div>
+
+        <div class="portfolio-item-wrapper">
+          <div class="portfolio-img-background" style="background-image:url(images/portfolio4.jpg)"></div>
+          <div class="img-text-wrapper">
+            <div class="logo-wrapper">
+              <img src="images/logos/karte.png" alt="">
+            </div>
+			
+			
+            <div class="subtitle">Meklēt kartē</div>
+			<div class="nav-link-wrapper2">
+			<a href="karte.php">Atvērt karti</a>
+			</div>
+            
+          </div>
+        </div>
+	</div>
+	
+	<div class = "container">
+				<div class="portfolio-img-background_last" style="background-image:url(images/rights.jpeg)"></div>
+    </div>
+	
+	
+	
 </body>
-</html>
 
+<script>
+  const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper');
+
+  portfolioItems.forEach(portfolioItem => {
+    portfolioItem.addEventListener('mouseover', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.add('image-blur');
+    });
+
+    portfolioItem.addEventListener('mouseout', () => {
+      console.log(portfolioItem.childNodes[1].classList)
+      portfolioItem.childNodes[1].classList.remove('image-blur');
+    });
+  });
+
+</script>
+
+</html>
